@@ -1,0 +1,240 @@
+{
+	"Empty method": {
+		"prefix": "meth",
+		"body": [
+			"METHOD ${1:method_name}.",
+			"\t$0",
+			"ENDMETHOD."
+		],
+		"description": "Empty method implementation"
+	},
+	"Types begin of": {
+		"prefix": "tbo",
+		"body": [
+			"TYPES BEGIN OF ${1:type_name},",
+			"\t$0,",
+			"END OF ${1:type_name}."
+		],
+		"description": "Structure type template"
+	},
+	"Bool": {
+		"prefix": "bool",
+		"body": [
+			"abap_bool"
+		],
+		"description": "abap_bool"
+	},
+	"true": {
+		"prefix": "true",
+		"body": [
+			"abap_true"
+		],
+		"description": "abap_true"
+	},
+	"false": {
+		"prefix": "false",
+		"body": [
+			"abap_false"
+		],
+		"description": "abap_false"
+	},
+	"Importing": {
+		"prefix": "im",
+		"body": [
+			"IMPORTING",
+			"\t$0"
+		],
+		"description": "Importing"
+	},
+	"Exporting": {
+		"prefix": "ex",
+		"body": [
+			"EXPORTING",
+			"\t$0"
+		],
+		"description": "Exporting"
+	},
+	"Changing": {
+		"prefix": "ch",
+		"body": [
+			"CHANGING",
+			"\t$0"
+		],
+		"description": "Changing"
+	},
+	"Returning value": {
+		"prefix": "rv",
+		"body": [
+			"RETURNING VALUE(${1:name}) $0"
+		],
+		"description": "Returning value"
+	},
+	"Try Catch": {
+		"prefix": "trycatch",
+		"body": [
+			"TRY.",
+			"\t${TM_SELECTED_TEXT}",
+			"\tCATCH ${1:cx_root} INTO DATA(cx).",
+			"\t\" handle error",
+			"ENDTRY."
+		]
+	},
+	"Alias": {
+		"prefix": "alias",
+		"body": [
+			"\t${1:method_name} FOR ${2:if_name}~${1:method_name},"
+		]
+	},
+	"Type ref to": {
+		"prefix": "trt",
+		"body": [
+			"TYPE REF TO $0"
+		]
+	},
+	"Table": {
+		"prefix": "tt",
+		"body": [
+			"TYPE ${1|STANDARD,SORTED,HASHED|} TABLE OF ${2:type} WITH ${3|UNIQUE,NON-UNIQUE|} KEY ${4:table_line}."
+		]
+	},
+	"Standard table": {
+		"prefix": "ttt",
+		"body": [
+			"TYPE STANDARD TABLE OF ${1:type} WITH KEY ${2:table_line}."
+		]
+	},
+	"Sorted table": {
+		"prefix": "tst",
+		"body": [
+			"TYPE SORTED TABLE OF ${1:type} WITH UNIQUE KEY ${2:table_line}."
+		]
+	},
+	"Hashed table": {
+		"prefix": "tht",
+		"body": [
+			"TYPE HASHED TABLE OF ${1:type} WITH UNIQUE KEY ${2:table_line}."
+		]
+	},
+	"Is initial": {
+		"prefix": "ii",
+		"body": [
+			"IS INITIAL"
+		]
+	},
+	"Loop (data)": {
+		"prefix": "loop",
+		"body": [
+			"LOOP AT ${1:itab} INTO DATA(x).",
+			"$0",
+			"ENDLOOP."
+		],
+		"description": "Loop (data variant)"
+	},
+	"Loop (field symbol)": {
+		"prefix": "loopfs",
+		"body": [
+			"LOOP AT ${1:itab} ASSIGNING FIELD-SYMBOL(<x>).",
+			"$0",
+			"ENDLOOP."
+		],
+		"description": "Loop (field symbol variant)"
+	},
+	"Is not initial": {
+		"prefix": "ini",
+		"body": [
+			"IS NOT INITIAL"
+		]
+	},
+	"Assert": {
+		"prefix": "ass",
+		"body": [
+			"cl_abap_unit_assert=>$0"
+		]
+	},
+	"If": {
+		"prefix": "if",
+		"body": [
+			"IF ${1:log_exp}.",
+			"\t${TM_SELECTED_TEXT}",
+			"ENDIF."
+		]
+	},
+	"Cond": {
+		"prefix": "cond",
+		"body": [
+			"COND ${1:#}( WHEN ${2:log_exp}",
+			"\tTHEN ${3:true_branch}",
+			"\tELSE ${4:false_branch} )."
+		]
+	},
+	"For+where": {
+		"prefix": "forw",
+		"body": [
+			"FOR x IN ${1:itab} WHERE ( ${2:cond} )",
+			"  ( x$0 )"
+		],
+		"description": "FOR expression with where condition"
+	},
+	"For": {
+		"prefix": "for",
+		"body": [
+			"FOR x IN ${1:itab}",
+			"  ( x$0 )"
+		],
+		"description": "FOR expression"
+	},
+	"Value": {
+		"prefix": "val",
+		"body": [
+			"VALUE ${1:#}( $0 )."
+		],
+		"description": "VALUE expression"
+	},
+	"Var": {
+		"prefix": "var",
+		"body": [
+			"DATA(${1:name}) = $0."
+		],
+		"description": "Inline data declaration"
+	},
+	"Data": {
+		"prefix": "data",
+		"body": [
+			"DATA(${1:name}) = $0."
+		],
+		"description": "Inline data declaration"
+	},
+	"nameof": {
+		"prefix": "nameof",
+		"body": [
+			"${TM_FILENAME_BASE}"
+		],
+		"description": "Name of the current class"
+	},
+	"Class": {
+		"prefix": "class",
+		"body": [
+			"CLASS ${1:class_name} DEFINITION PUBLIC FINAL.",
+			"",
+			"\tPUBLIC SECTION.",
+			"\t$0",
+			"\tPROTECTED SECTION.",
+			"\tPRIVATE SECTION.",
+			"ENDCLASS.",
+			"",
+			"CLASS ${1:class_name} IMPLEMENTATION.",
+			"",
+			"ENDCLASS."
+		]
+	},
+	"Case": {
+		"prefix": "case",
+		"body": [
+			"CASE ${1:var_name}.",
+			"\tWHEN ${value}.",
+			"\t\t${TM_SELECTED_TEXT}$0",
+			"\tWHEN OTHERS.",
+			"ENDCASE."
+		]
+	}
+}

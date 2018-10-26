@@ -1,0 +1,21 @@
+{
+    "name": "abap-snippets",
+    "displayName": "ABAP Snippets",
+    "description": "Code snippets for the ABAP language",
+    "version": "0.0.1",
+    "publisher": "hudakf",
+    "engines": {
+        "vscode": "^1.28.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "abap",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}
