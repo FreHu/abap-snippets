@@ -17,5 +17,8 @@
                 "path": "./snippets/snippets.json"
             }
         ]
+    },
+    "repository": {
+        "url": "https://github.com/FreHu/abap-snippets"
     }
 }
