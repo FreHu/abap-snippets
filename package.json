@@ -7,9 +7,15 @@
     "engines": {
         "vscode": "^1.28.0"
     },
+	"keywords": [
+		"abap"
+	],    
     "categories": [
         "Snippets"
     ],
+	"extensionDependencies": [
+		"larshp.vscode-abap"
+	],    
     "contributes": {
         "snippets": [
             {
