@@ -3,7 +3,7 @@
     "displayName": "ABAP Snippets",
     "description": "Code snippets for the ABAP language",
     "version": "0.0.1",
-    "publisher": "hudakf",
+    "publisher": "frehu",
     "engines": {
         "vscode": "^1.28.0"
     },
