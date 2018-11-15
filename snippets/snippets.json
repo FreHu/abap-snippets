@@ -236,5 +236,80 @@
 			"\tWHEN OTHERS.",
 			"ENDCASE."
 		]
+	},
+	"throw": {
+		"prefix": "throw",
+		"body": [
+			"RAISE EXCEPTION NEW ${1:ex_type}( $2 )."
+		]
+	},
+	"read-only": {
+		"prefix": "ro",
+		"body": [
+			"READ-ONLY."
+		]
+	},
+	"is bound": {
+		"prefix": "ib",
+		"body": [
+			"IS BOUND."
+		]
+	},
+	"is not bound": {
+		"prefix": "inb",
+		"body": [
+			"IS NOT BOUND."
+		]
+	},
+	"this": {
+		"prefix": "this",
+		"body": [
+			"me->"
+		]
+	},
+	"self": {
+		"prefix": "self",
+		"body": [
+			"me->"
+		]
+	},
+	"test method": {
+		"prefix": "gwt",
+		"body": [
+			"METHOD test.",
+			"\t\" given",
+			"\t$0",
+			"\t\" when",
+			"",
+			"\t\" then",
+			"",
+			"ENDMETHOD."
+		]
+	},
+	"inheriting from": {
+		"prefix": "inh",
+		"body": [
+			"INHERITING FROM ${1:class_name}"
+		]
+	},
+	"Constructor": {
+		"prefix": "ctor",
+		"body": [ 
+			"METHODS constructor."
+		 ]
+	},
+	"Class Constructor": {
+		"prefix": "cctor",
+		"body": [ 
+			"METHODS class-constructor."
+		 ]
+	},
+	"Enum": {
+		"prefix": "enum",
+		"body": [ 
+			"BEGIN OF ENUM ${1:enum_name}",
+			"${2:value},",
+			"END OF ENUM ${1:enum_name},"
+		 ]
 	}
 }
