@@ -39,7 +39,7 @@
 		"description": "abap_false"
 	},
 	"Importing": {
-		"prefix": "im",
+		"prefix": "imp",
 		"body": [
 			"IMPORTING",
 			"\t$0"
@@ -47,7 +47,7 @@
 		"description": "Importing"
 	},
 	"Exporting": {
-		"prefix": "ex",
+		"prefix": "exp",
 		"body": [
 			"EXPORTING",
 			"\t$0"
@@ -55,7 +55,7 @@
 		"description": "Exporting"
 	},
 	"Changing": {
-		"prefix": "ch",
+		"prefix": "cha",
 		"body": [
 			"CHANGING",
 			"\t$0"
@@ -63,7 +63,7 @@
 		"description": "Changing"
 	},
 	"Returning value": {
-		"prefix": "rv",
+		"prefix": "ret",
 		"body": [
 			"RETURNING VALUE(${1:name}) $0"
 		],
@@ -73,7 +73,7 @@
 		"prefix": "trycatch",
 		"body": [
 			"TRY.",
-			"\t${TM_SELECTED_TEXT}",
+			"\t${TM_SELECTED_TEXT}$0",
 			"\tCATCH ${1:cx_root} INTO DATA(cx).",
 			"\t\" handle error",
 			"ENDTRY."
@@ -146,7 +146,7 @@
 		]
 	},
 	"Assert": {
-		"prefix": "ass",
+		"prefix": "assert",
 		"body": [
 			"cl_abap_unit_assert=>$0"
 		]
@@ -163,8 +163,8 @@
 		"prefix": "cond",
 		"body": [
 			"COND ${1:#}( WHEN ${2:log_exp}",
-			"\tTHEN ${3:true_branch}",
-			"\tELSE ${4:false_branch} )."
+			"\tTHEN ${3:abap_true}",
+			"\tELSE ${4:abap_false} )."
 		]
 	},
 	"For+where": {
@@ -195,14 +195,14 @@
 		"body": [
 			"DATA(${1:name}) = $0."
 		],
-		"description": "Inline data declaration"
+		"description": "Variable declaration (inline data style)"
 	},
 	"Data": {
 		"prefix": "data",
 		"body": [
-			"DATA(${1:name}) = $0."
+			"DATA: ${1:x} $0"
 		],
-		"description": "Inline data declaration"
+		"description": "Variable declaration (legacy style)"
 	},
 	"nameof": {
 		"prefix": "nameof",
@@ -218,12 +218,9 @@
 			"",
 			"\tPUBLIC SECTION.",
 			"\t$0",
-			"\tPROTECTED SECTION.",
-			"\tPRIVATE SECTION.",
 			"ENDCLASS.",
 			"",
 			"CLASS ${1:class_name} IMPLEMENTATION.",
-			"",
 			"ENDCLASS."
 		]
 	},
@@ -301,15 +298,16 @@
 	"Class Constructor": {
 		"prefix": "cctor",
 		"body": [ 
-			"METHODS class-constructor."
+			"CLASS-METHODS class_constructor."
 		 ]
 	},
 	"Enum": {
 		"prefix": "enum",
 		"body": [ 
-			"BEGIN OF ENUM ${1:enum_name}",
-			"${2:value},",
-			"END OF ENUM ${1:enum_name},"
+			"TYPES:",
+			"\tBEGIN OF ENUM ${1:enum_name},",
+			"\t\t${2:value},",
+			"\tEND OF ENUM ${1:enum_name}."
 		 ]
 	}
 }
