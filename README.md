@@ -22,10 +22,10 @@ Types:
 - alias
 
 Methods:
-- im, ex, ch, rv = importing, exporting, changing, returning value
+- imp, exp, cha, ret = importing, exporting, changing, returning value
 - meth = empty method body
 - gwt = empty unit test with given/when/then sections
-- ctor, cctor = constructor, class-constructor definition
+- ctor, cctor = constructor, class_constructor definition
 
 Other:
 - ro = read-only
@@ -33,7 +33,7 @@ Other:
 - ini = is not initial
 - ib = is bound
 - inb = is not bound
-- inh = inheriting from 
+- inh = inheriting from
 - class = empty class definition + implementation
 - if
 - trycatch
